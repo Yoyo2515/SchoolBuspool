@@ -1,3 +1,5 @@
+import java.time.Instant;
+
 public class Parent extends Account       //Inheritance
 {
     public static String type= "PARENT";
@@ -8,7 +10,7 @@ public class Parent extends Account       //Inheritance
     @Override
     protected void setUserId()
     {
-    this.userId=String.valueOf((int)(Math.random()*10000));
+    this.userId=String.valueOf((int)(Math.random()*10000))+ Instant.now().getEpochSecond();
     }
     @Override
     protected void register()
